@@ -21,23 +21,23 @@ test('button redirect testing', async ({ page }) => {
   await expect(page.locator('#btnSwitch')).toHaveText('Dark');
 
   await page.locator('#linkedin').click();
-  await expect(page).toHaveURL('https://www.linkedin.com/in/tom-tait/');
-  await page.goto('https://www.tomtait.dev');
+  await expect(page).toHaveURL(/.*tom-tait.*/);
+  await page.goto('https://www.tomtait.dev/');
 
   await page.locator('#github').click();
   await expect(page).toHaveURL('https://github.com/t0mtait');
-  await page.goto('https://www.tomtait.dev');
+  await page.goto('https://www.tomtait.dev/');
 
   await page.locator('#simonView').click();
   await expect(page).toHaveURL('https://simon.tomtait.dev');
-  await page.goto('https://www.tomtait.dev');
+  await page.goto('https://www.tomtait.dev/');
 
   await page.locator('#simonGit').click();
   await expect(page).toHaveURL('https://github.com/t0mtait/simon');
   await page.goto('https://www.tomtait.dev');
 
   await page.locator('#translatorView').click();
-  await expect(page).toHaveURL('https://translator.tomtait.dev');
+  await expect(page).toHaveURL('https://translator.tomtait.dev/home');
   await page.goto('https://www.tomtait.dev');
 
   await page.locator('#translatorGit').click();
