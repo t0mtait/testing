@@ -15,10 +15,10 @@ test('button redirect testing', async ({ page }) => {
   await page.goto('https://www.tomtait.dev');
 
   await page.locator('#btnSwitch').click();
-  await expect(page.locator('#btnSwitch')).toHaveText('Light');
+  await expect(page.locator('#btnSwitch')).toHaveText('Light Mode');
 
   await page.locator('#btnSwitch').click();
-  await expect(page.locator('#btnSwitch')).toHaveText('Dark');
+  await expect(page.locator('#btnSwitch')).toHaveText('Dark Mode');
 
   await page.locator('#linkedin').click();
   await expect(page).toHaveURL(/.*tom-tait.*/);
@@ -28,13 +28,13 @@ test('button redirect testing', async ({ page }) => {
   await expect(page).toHaveURL('https://github.com/t0mtait');
   await page.goto('https://www.tomtait.dev/');
 
-  await page.locator('#simonView').click();
-  await expect(page).toHaveURL('https://simon.tomtait.dev');
+  await page.locator('#cryptoView').click();
+  await expect(page).toHaveURL('https://cryptoport.tomtait.dev/login');
   await page.goto('https://www.tomtait.dev/');
 
-  await page.locator('#simonGit').click();
-  await expect(page).toHaveURL('https://github.com/t0mtait/simon');
-  await page.goto('https://www.tomtait.dev');
+  await page.locator('#cryptoGit').click();
+  await expect(page).toHaveURL('https://github.com/t0mtait/cryptoport');
+  await page.goto('https://www.tomtait.dev/');
 
   await page.locator('#translatorView').click();
   await expect(page).toHaveURL('https://translator.tomtait.dev/home');
