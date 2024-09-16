@@ -8,7 +8,6 @@ test('element visibility testing', async ({ page }) => {
   await expect(page.locator('#aboutsection')).toBeVisible();
   await expect(page.locator('#experiencesection')).toBeVisible();
   await expect(page.locator('#projectssection')).toBeVisible();
-  await expect(page.locator('#contactsection')).toBeVisible();
 });
 
 test('button redirect testing', async ({ page }) => {
@@ -36,11 +35,17 @@ test('button redirect testing', async ({ page }) => {
   await expect(page).toHaveURL('https://github.com/t0mtait/cryptoport');
   await page.goto('https://www.tomtait.dev/');
 
-  await page.locator('#translatorView').click();
-  await expect(page).toHaveURL('https://translator.tomtait.dev/home');
-  await page.goto('https://www.tomtait.dev');
+  await page.locator('#playwrightGit').click();
+  await expect(page).toHaveURL('https://github.com/t0mtait/testing');
+  await page.goto('https://www.tomtait.dev/');
 
-  await page.locator('#translatorGit').click();
-  await expect(page).toHaveURL('https://github.com/t0mtait/translator');
-  await page.goto('https://www.tomtait.dev');
+  await page.locator('#cityView').click();
+  await expect(page).toHaveURL('https://imgur.com/a/mapgame-app-images-lX40Mj1');
+  await page.goto('https://www.tomtait.dev/');
+  
+  await page.locator('#cityGit').click();
+  await expect(page).toHaveURL('https://github.com/t0mtait/mapgame');
+  await page.goto('https://www.tomtait.dev/');
+  
+
 });
