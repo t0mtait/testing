@@ -45,7 +45,4 @@ test('button redirect testing', async ({ page }) => {
   
   await page.locator('#cityGit').click();
   await expect(page).toHaveURL('https://github.com/t0mtait/mapgame');
-  await page.goto('https://www.tomtait.dev/');
-  
-
 });
